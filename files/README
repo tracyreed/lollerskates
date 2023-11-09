@@ -1,0 +1,55 @@
+
+                             LOLLERSKATES
+
+Lots Of Logs Left Easily Rendered So Knowledgable Admins Time Easily
+                                 Saved
+
+                         Log analyzer program
+
+Compares logfiles against a series of regular expressions to filter
+out uninteresting bits and email whatever is left to the
+administrator. The administator can now increase security and
+awareness of what the system is doing without having to read the
+entirety of the boring log files which is often impossible.
+
+Tracy R Reed
+treed@copilotconsulting.com
+
+Copyright 2006 Tracy Reed & Copilot Consulting
+
+Everyone should review the logs on all of their systems but few
+do. Logcheck used to be a great tool for this but it seems to have
+fallen into disuse and is no longer maintained. There is a debian
+package which seems to be maintained but it is way more complicated
+than it needs to be. RedHat comes with something called logwatch but
+it tries to do way too much interpretation and summarizing (telling
+you how many emails were sent, how many bounces, how many people
+logged in) which I usually do not care about. I just want to see if
+anything unusual happened. Even swatch seems to be a little more
+complicated than it should be and it doesn't have a feature I have
+always wanted: macros which make the regex easier to deal with.
+
+So I wrote LOLLERSKATES. It is simple, easy to configure, and has
+macros so I can fully match a proper IP address without having to
+always type in that huge regex which matches IP's.
+
+TODO list:
+
+Unit tests? It's already written so I don't know if that would serve
+much point. I'm not sure how I would written implemented unit tests to
+begin with.
+
+Comments are critiques are welcome.
+
+To use it to monitor your logfiles download the tarball, explode it
+somewhere reasonable like /usr/local/lollerskates, config
+lollerskates_config.py with the logfiles you want to monitor, where
+you want results emailed to, etc. You will have to create the dir
+where it keeps its state files. Then cron it to run every hour or day
+or whatever suits your fancy. I run it hourly. Then you can
+progressively add regexes to the ignore.conf file for stuff you don't
+want to see anymore.
+
+Download it from:
+
+http://ultraviolet.org/Members/treed/lollerskates/
